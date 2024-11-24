@@ -8,7 +8,7 @@ public class MainApp {
             @Override
             public void run() {
                 new MiniPaintGUI();
-            }
+            } // appel de mon MiniPaintGUI
         });
     }
 }
