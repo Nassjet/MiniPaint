@@ -136,10 +136,10 @@ public class DrawingPanel extends JPanel {
 
         switch (currentShape) {
             case "Carre":
-                g.fillRect(x, y, width, width);
+                g.drawRect(x, y, width, width);
                 break;
             case "Rectangle":
-                g.fillRect(x, y, width, height);
+                g.drawRect(x, y, width, height);
                 break;
             case "Triangle":
                 // Calcul des coordonnées des trois sommets du triangle
@@ -150,10 +150,11 @@ public class DrawingPanel extends JPanel {
                 Polygon triangle = new Polygon(xPoints, yPoints, 3);
                 g.fillPolygon(triangle);
                 break;
-
             case "Cercle":
-                g.fillOval(x, y, width, height);
+                g.drawOval(x, y, width, width);
                 break;
+            case "Oval":
+                g.drawOval(x, y, width, height);
         }
 
         g.dispose();
