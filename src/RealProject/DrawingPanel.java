@@ -7,7 +7,7 @@ import java.awt.event.MouseEvent;
 
 /**
  * Classe DrawingPanel qui permet de dessiner des formes diverses telles que des
- * carrés, des rectangles, des triangles, des lignes à main levée, et une gomme pour effacer.
+ * carrés, des rectangles, des triangles, des cercles, des lignes à main levée, et une gomme pour effacer.
  */
 public class DrawingPanel extends JPanel {
     private Color color;  // Stockage pour la couleur actuelle
@@ -62,7 +62,6 @@ public class DrawingPanel extends JPanel {
                 } else {
                     currentX = e.getX();
                     currentY = e.getY();
-                    repaint();
                 }
             }
 
@@ -143,10 +142,17 @@ public class DrawingPanel extends JPanel {
                 g.fillRect(x, y, width, height);
                 break;
             case "Triangle":
-                Polygon triangle = new Polygon(
-                        new int[]{startX, endX, startX + (startX - endX) / 2},
-                        new int[]{startY, startY, endY}, 3);
+                // Calcul des coordonnées des trois sommets du triangle
+                int[] xPoints = {startX, endX, (startX + endX) / 2};
+                int[] yPoints = {startY, startY, endY};
+
+                // Création du triangle et dessin
+                Polygon triangle = new Polygon(xPoints, yPoints, 3);
                 g.fillPolygon(triangle);
+                break;
+
+            case "Cercle":
+                g.fillOval(x, y, width, height);
                 break;
         }
 

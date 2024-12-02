@@ -16,6 +16,7 @@ public class ToolbarPanel extends JPanel {
         JButton btnCarre = new JButton("Carre");
         JButton btnRectangle = new JButton("Rectangle");
         JButton btnTriangle = new JButton("Triangle");
+        JButton btnCercle = new JButton("Cercle");
         JButton btnCrayon = new JButton("Crayon");
         JButton btnGomme = new JButton("Gomme");
         JButton btnColorChooser = new JButton("Couleur");
@@ -24,6 +25,7 @@ public class ToolbarPanel extends JPanel {
         toolBar.add(btnCarre);
         toolBar.add(btnRectangle);
         toolBar.add(btnTriangle);
+        toolBar.add(btnCercle);
         toolBar.add(btnCrayon);
         toolBar.add(btnGomme);
         toolBar.add(btnColorChooser);
@@ -32,6 +34,7 @@ public class ToolbarPanel extends JPanel {
         btnCarre.addActionListener(e -> drawingPanel.setCurrentShape("Carre"));
         btnRectangle.addActionListener(e -> drawingPanel.setCurrentShape("Rectangle"));
         btnTriangle.addActionListener(e -> drawingPanel.setCurrentShape("Triangle"));
+        btnCercle.addActionListener(e -> drawingPanel.setCurrentShape("Cercle"));
         btnCrayon.addActionListener(e -> drawingPanel.setCurrentShape("Crayon"));
         btnGomme.addActionListener(e -> drawingPanel.setCurrentShape("Gomme"));
 
